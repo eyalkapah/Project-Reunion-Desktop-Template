@@ -12,9 +12,9 @@ namespace ProjectReunionTemplate.Core.ViewModels
             get => _title;
             set => SetProperty(ref _title, value);
         }
-        public SettingsViewModel(INavigationService navigationService) : base(navigationService)
+
+        public SettingsViewModel(INavigationService navigationService, ILoggerService loggerService) : base(navigationService, loggerService)
         {
-            Title = "Settings";
         }
     }
 }

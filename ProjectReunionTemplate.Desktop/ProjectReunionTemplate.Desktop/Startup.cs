@@ -6,6 +6,7 @@ using ProjectReunionTemplate.Core.ViewModels;
 using ProjectReunionTemplate.Desktop.Ioc;
 using ProjectReunionTemplate.Desktop.Pages;
 using ProjectReunionTemplate.Desktop.Services;
+using Serilog;
 
 namespace ProjectReunionTemplate.Desktop
 {
@@ -21,8 +22,11 @@ namespace ProjectReunionTemplate.Desktop
         public ServiceProvider ConfigureServices()
         {
             // Services
+            _services.AddLogging(builder => builder.AddSerilog(dispose: true));
+
             _services.AddSingleton<INavigationService, NavigationService>();
             _services.AddSingleton<ITextService>(_ => new TextService("Hi WPF .NET 5!"));
+            _services.AddSingleton<ILoggerService, LoggerService>();
 
             // Views
             _services.AddSingleton<MainShell>();

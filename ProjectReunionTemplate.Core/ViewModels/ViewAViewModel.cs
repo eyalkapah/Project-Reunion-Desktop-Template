@@ -18,9 +18,9 @@ namespace ProjectReunionTemplate.Core.ViewModels
             set => SetProperty(ref _title, value);
         }
 
-        public ViewAViewModel(INavigationService navigationService) : base(navigationService)
+
+        public ViewAViewModel(INavigationService navigationService, ILoggerService loggerService) : base(navigationService, loggerService)
         {
-            Title = "View A";
         }
     }
 }

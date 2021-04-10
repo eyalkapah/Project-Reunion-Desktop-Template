@@ -6,6 +6,7 @@ namespace ProjectReunionTemplate.Core.ViewModels.Base
     public class NavigationViewModel : ViewModelBase
     {
         public INavigationService NavigationService { get; }
+        protected ILoggerService Logger { get; }
 
         public virtual Task OnNavigatedTo()
         {
@@ -19,9 +20,10 @@ namespace ProjectReunionTemplate.Core.ViewModels.Base
 
         // C'tor
         //
-        public NavigationViewModel(INavigationService navigationService)
+        public NavigationViewModel(INavigationService navigationService, ILoggerService loggerService)
         {
             NavigationService = navigationService;
+            Logger = loggerService;
         }
     }
 }

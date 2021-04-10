@@ -13,10 +13,12 @@ namespace ProjectReunionTemplate.Core.ViewModels
             set => SetProperty(ref _title, value);
         }
 
-
-        public MainViewModel(INavigationService navigationService) : base(navigationService)
+        public MainViewModel(INavigationService navigationService, ILoggerService loggerService) : base(
+            navigationService, loggerService)
         {
+            Logger.Verbose("Start MainViewModel");
         }
+
 
         public void NavigateToSettingsPage()
         {

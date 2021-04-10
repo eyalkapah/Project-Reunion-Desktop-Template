@@ -5,7 +5,7 @@ namespace ProjectReunionTemplate.Core.ViewModels
 {
     public class HomeViewModel : NavigationViewModel
     {
-        public HomeViewModel(INavigationService navigationService) : base(navigationService)
+        public HomeViewModel(INavigationService navigationService, ILoggerService loggerService) : base(navigationService, loggerService)
         {
         }
     }
